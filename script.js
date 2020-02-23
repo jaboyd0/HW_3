@@ -18,6 +18,10 @@ function writePassword() {
       alert ("Maximum password length is 128")
       return;
     }
+    if (passwordLength === "") {
+      alert ("Must provide response to Password Length")
+      return;
+    }
       
   var lowerCase =confirm("Do you want lower case characters included?")
   var upperCase =confirm("Do you want upper case characters included?")
