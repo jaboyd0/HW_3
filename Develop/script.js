@@ -3,10 +3,11 @@ var generateBtn = document.querySelector("#generate");
 var passwordText = document.querySelector("#password");
 
 
-
-// function to collect desired password info
+// function that runs when button clicked
 function writePassword() {
   passwordText.value = "";
+
+// gathering desired password requirments
 
   var passwordLength = prompt("Enter number of characters needed for password: \n(must be between 8-128 characters for security)") 
     if (parseInt(passwordLength) < 8) {
@@ -47,9 +48,9 @@ function writePassword() {
     var specialArray = ""
   }
   
-if (lowerCase !== true && upperCase !== true && numeric !== true && special !== true) {
-  alert ("Please select at least one character type")
-  return;
+  if (lowerCase !== true && upperCase !== true && numeric !== true && special !== true) {
+    alert ("Please select at least one character type")
+    return;
 }
 
   var characterPool = lowerArray.concat(upperArray, numericArray, specialArray);
