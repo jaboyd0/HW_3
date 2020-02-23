@@ -46,8 +46,12 @@ function writePassword() {
   var password = characterPool[Math.floor(Math.random() * characterPool.length)]
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value +=password;
   }
+}
+
+function clearPassword() {
+ passwordText.value = ""
 }
 
 // Add event listener to generate button
