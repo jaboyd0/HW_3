@@ -5,7 +5,7 @@ var lowerCase =confirm("Do you want lower case characters included?")
 var upperCase =confirm("Do you want upper case characters included?")
 var numeric =confirm("Do you want numeric characters included?")
 var special =confirm("Do you want special characters included?")
-var characterPool
+var passwordText = document.querySelector("#password");
 
 if (lowerCase) {
   var lowerArray = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -41,18 +41,15 @@ console.log (characterPool)
 
 // Write password to the #password input
 function writePassword() {
+  passwordText.value = "";
   // var password = generatePassword();
   for(var i = 0; i < parseInt(passwordLength); i++) {
   var password = characterPool[Math.floor(Math.random() * characterPool.length)]
-  var passwordText = document.querySelector("#password");
 
   passwordText.value +=password;
   }
 }
 
-function clearPassword() {
- passwordText.value = ""
-}
-
 // Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
